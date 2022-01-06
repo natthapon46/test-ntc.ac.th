@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>แผนการเรียนหลักสูตรและหน่วยกิต (ปวช.)</title>
+<link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<SCRIPT type="text/javascript">
+/*
+Snow Fall 1 - no images - Java Script
+Visit http://rainbow.arch.scriptmania.com/scripts/
+  for this script and many more
+*/
+
+// Set the number of snowflakes (more than 30 - 40 not recommended)
+var snowmax=50
+
+// Set the colors for the snow. Add as many colors as you like
+var snowcolor=new Array("#aaaacc","#ddddff","#ccccdd","#f3f3f3","#f0ffff")
+
+// Set the fonts, that create the snowflakes. Add as many fonts as you like
+var snowtype=new Array("Times","Arial","Times","Verdana")
+
+// Set the letter that creates your snowflake (recommended: * )
+var snowletter="*"
+
+// Set the speed of sinking (recommended values range from 0.3 to 2)
+var sinkspeed=0.8
+
+// Set the maximum-size of your snowflakes
+var snowmaxsize=30
+
+// Set the minimal-size of your snowflakes
+var snowminsize=8
+
+// Set the snowing-zone
+// Set 1 for all-over-snowing, set 2 for left-side-snowing
+// Set 3 for center-snowing, set 4 for right-side-snowing
+var snowingzone=1
+
+///////////////////////////////////////////////////////////////////////////
+// CONFIGURATION ENDS HERE
+///////////////////////////////////////////////////////////////////////////
+
+
+// Do not edit below this line
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {
+        rand=Math.floor(range*Math.random())
+    return rand
+}
+
+function initsnow() {
+        if (ie5 || opera) {
+                marginbottom = document.body.scrollHeight
+                marginright = document.body.clientWidth-15
+        }
+        else if (ns6) {
+                marginbottom = document.body.scrollHeight
+                marginright = window.innerWidth-15
+        }
+        var snowsizerange=snowmaxsize-snowminsize
+        for (i=0;i<=snowmax;i++) {
+                crds[i] = 0;
+            lftrght[i] = Math.random()*15;
+            x_mv[i] = 0.03 + Math.random()/10;
+                snow[i]=document.getElementById("s"+i)
+                snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+                snow[i].size=randommaker(snowsizerange)+snowminsize
+                snow[i].style.fontSize=snow[i].size+'px';
+                snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+                snow[i].style.zIndex=1000
+                snow[i].sink=sinkspeed*snow[i].size/5
+                if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+                if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+                if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+                if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+                snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+                snow[i].style.left=snow[i].posx+'px';
+                snow[i].style.top=snow[i].posy+'px';
+        }
+        movesnow()
+}
+
+function movesnow() {
+        for (i=0;i<=snowmax;i++) {
+                crds[i] += x_mv[i];
+                snow[i].posy+=snow[i].sink
+                snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+                snow[i].style.top=snow[i].posy+'px';
+
+                if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+                        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+                        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+                        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+                        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+                        snow[i].posy=0
+                }
+        }
+        var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+        document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+        window.onload=initsnow
+}
+
+</SCRIPT>
+
+
+
+<script type="text/javascript">
+//form tags to omit in NS6+:
+//http://eking.in
+var omitformtags=["input", "textarea", "select"]
+
+omitformtags=omitformtags.join("|")
+
+function disableselect(e){
+if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+return false
+}
+
+function reEnable(){
+return true
+}
+
+if (typeof document.onselectstart!="undefined")
+document.onselectstart=new Function ("return false")
+else{
+document.onmousedown=disableselect
+document.onmouseup=reEnable
+}
+
+</script>
+<style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: right;
+	font-family: "TH SarabunPSK";
+	font-size: 16pt;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+	background-color: #0099CC;
+	color: white;
+	text-align: center;
+}
+body p {
+	font-family: "TH SarabunPSK";
+}
+body p {
+	font-size: 16px;
+}
+body p {
+	font-size: 16pt;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<form class="navbar-form" role="search">
+  
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">แผนการเรียนหลักสูตรประกาศนียบัตรวิชาชีพ (ปวช.)</a>
+    </div>
+	
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <a href="course.voc1.html">
+      <button type="button" class="btn btn-success navbar-btn">
+	  <span aria-hidden="true"></span>ภาคเรียนที่ 1</button>
+      </a>
+	  <a href="#">
+      <button type="button" class="btn btn-success navbar-btn  btn active">
+	  <span aria-hidden="true"></span>ภาคเรียนที่ 2</button>
+      </a>
+	  <a href="course.voc3.html">
+      <button type="button" class="btn btn-success navbar-btn">
+	  <span aria-hidden="true"></span>ภาคเรียนที่ 3</button>
+      </a>
+	  <a href="course.voc4.html">
+      <button type="button" class="btn btn-success navbar-btn">
+	  <span aria-hidden="true"></span>ภาคเรียนที่ 4</button>
+      </a>
+	  <a href="course.voc5.html">
+      <button type="button" class="btn btn-success navbar-btn">
+	  <span aria-hidden="true"></span>ภาคเรียนที่ 5</button>
+      </a>
+	  <a href="course.voc6.html">
+      <button type="button" class="btn btn-success navbar-btn">
+	  <span aria-hidden="true"></span>ภาคเรียนที่ 6</button>
+      </a>
+      </ul>
+	  <div class="navbar-right">
+
+	  <a href="index.html#services">
+      <button type="button" class="btn btn-danger navbar-btn">
+	  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> หน้าหลัก</button>
+      </a>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<table width="100%">
+  <tr>
+    <th width="21%" align="center" valign="bottom" scope="row"><strong>ชื่อหลักสูตร</strong><strong></strong></th>
+    <td width="79%">&nbsp;</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row">&nbsp;</th>
+    <td style="font-weight: bold">ภาษาไทย : หลักสูตรประกาศนียบัตรวิชาชีพ (ปวช.) สาขาเทคโนโลยีสารสนเทศ</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row">&nbsp;</th>
+    <td style="font-weight: bold">ภาษาอังกฤษ : Vocational  Certificate Program in Information Technology</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row"><strong>ชื่อวุฒิการศึกษา</strong><strong> </strong></th>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row">&nbsp;</th>
+    <td>ชื่อเต็ม (ไทย) : ประกาศนียบัตรวิชาชีพ (เทคโนโลยีสารสนเทศ)</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row">&nbsp;</th>
+    <td>ชื่อย่อ (ไทย) : ปวช. (เทคโนโลยีสารสนเทศ)</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row">&nbsp;</th>
+    <td>ชื่อเต็ม (อังกฤษ) : Vocational  Certificate in Information Technology</td>
+  </tr>
+  <tr>
+    <th align="center" valign="bottom" scope="row">&nbsp;</th>
+    <td>ชื่อย่อ (อังกฤษ) : Voc.  Cert. Information Technology</td>
+  </tr>
+</table><br />
+</p>
+<div align="center">
+  <h4>แผนการเรียนหลักสูตรประกาศนียบัตรวิชาชีพชั้นสูง (ปวช. 2556) ประเภทวิชาเทคโนโลยีสารสนเทศและการสื่อสาร</h4>
+  <h4>สาขาวิชาเทคโนโลยีสารสนเทศ สาขางานเทคโนโลยีสารสนเทศ</h4>
+</div>
+<h3 align="center">ภาคเรียนที่ 2 ปีการศึกษา 2560</h3>
+<table class="table-bordered">
+  <tr style="font-weight: bold">
+	<th>รหัสวิชา</th>
+    <th>ชื่อวิชา</th>
+	<th>ท</th>
+	<th>ป</th>
+    <th>น</th>
+	
+	
+  </tr>
+  <tr style="font-weight: bold">
+	<td></td>
+    <td>1. หมวดวิชาทักษะชีวิต (ไม่น้อยกว่า 22 นก.)</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+	<td></td>
+    <td>1.1 กลุ่มวิชาภาษาไทย</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+	<td></td>
+    <td>1.2 กลุ่มวิชาภาษาต่างประเทศ</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+	<td style="text-align:center">2000-1201</td>
+    <td>ภาษาอังกฤษในชีวิตจริง 2</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">0</td>
+    <td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td></td>
+    <td>1.3	กลุ่มวิชาวิทยาศาสตร์ </td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+	<td style="text-align:center">2000-1301</td>
+    <td>วิทบาศาสตร์เพื่อพัฒนาทักษะชีวิต</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+    <td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td></td>
+    <td>1.4	กลุ่มวิชาคณิตศาสตร์</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+	<td></td>
+    <td>1.5	กลุ่มวิชาสังคมศึกษา</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  
+  <tr>
+	<td></td>
+    <td>1.6	กลุ่มวิชาสุขศึกษาและพลศึกษา</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  
+  <tr>
+	<td></td>
+    <td style="font-weight: bold">2. หมวดวิชาทักษะวิชาชีพ (ไม่น้อยกว่า 71 นก.)</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+	<td>2.1 กลุ่มทักษะวิชาชีพพื้นฐาน</td>
+	<td></td>
+	<td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:center">2901-1002</td>
+	<td>การใช้โปรแกรมอรรถประโยชน์</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+    <td style="text-align:center">2</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">2901-1005</td>
+	<td>คอมพิวเตอร์กราฟิกเบื้องต้น</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+    <td style="text-align:center">2</td>
+  </tr>
+  
+    <tr>
+	<td></td>
+	<td>2.2 กลุ่มทักษะวิชาชีพเฉพาะ</td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+
+  <tr>
+	<td style="text-align:center">2901-2003</td>
+	<td>โปรแกรมนำเสนองาน</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td style="text-align:center">2901-2004</td>
+	<td>การเขียนโปรแกรมคอมพิวเตอร์เบื้องต้น</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td style="text-align:center">2901-2005</td>
+	<td>การจัดการฐานข้อมูลเบื้องต้น</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td></td>
+	<td>2.3 กลุ่มทักษะวิชาชีพเลือก</td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+
+  <tr>
+	<td style="text-align:center">2901-2110</td>
+	<td>การบำรุงรักษาคอมพิวเตอร์</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">3</td>
+	<td style="text-align:center">2</td>
+  </tr>
+  
+  <tr>
+	<td></td>
+	<td>2.4 ฝึกประสบการณ์ทักษะวิชาชีพ</td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td>2.5 โครงการพัฒนาทักษะวิชาชีพ</td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td style="font-weight: bold">3. หมวดวิชาเลือกเสรี (ไม่น้อยกว่า 10 นก.)</td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+<tr>
+	<td style="text-align:center">2901-9001</td>
+	<td>การเขียนโปรแกรมภาษาไพธอนเบื้องต้น</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td style="text-align:center">2901-2103</td>
+	<td>โปรแกรมระบบจำลองการทำงานคอมพิวเตอร์</td>
+	<td style="text-align:center">1</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">2</td>
+  </tr>
+  <tr>
+	<td></td>
+	<td style="font-weight: bold">4. กิจกรรมเสริมหลักสูตร (2 ซม./สป.)</td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td style="text-align:center">2000-2001</td>
+	<td>กิจกรรมลูกเสือวิสามัญ 2</td>
+	<td style="text-align:center">0</td>
+	<td style="text-align:center">2</td>
+	<td style="text-align:center">0</td>
+  </tr>
+  
+  <tr style="font-weight: bold">
+	<th></th>
+	<th style="text-align:center">รวม</th>
+	<th style="text-align:center">11</th>
+	<th style="text-align:center">21</th>
+	<th style="text-align:center">20</th>
+  </tr>
+
+</table>
+<br><br>
+</body>
+</html>

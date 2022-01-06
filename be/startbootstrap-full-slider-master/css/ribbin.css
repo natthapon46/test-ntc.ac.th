@@ -1,0 +1,18 @@
+element.style {
+}
+
+.stick-top {
+    top: 0;
+}
+.stick-left {
+    left: 0;
+}
+@media only all and (min-width: 768px)
+.black-ribbon {
+    width: auto;
+}
+.black-ribbon {
+    position: fixed;
+    z-index: 9999;
+}
+
