@@ -970,4 +970,8 @@ ul.address {
   background-color: #ff6b00;
 }
 
+/* new */
+.col-md-auto {
+  margin-bottom: 5rem;
+}
 /*Presets*/
