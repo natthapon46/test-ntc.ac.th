@@ -40,7 +40,6 @@ h3 {
 .parallax h6 {
   color: #fff;
 }
-
 .parallax input[type="text"],
 .parallax input[type="text"]:hover,
 .parallax input[type="email"],
@@ -318,6 +317,9 @@ section {
 #about-us {
   background-image: url(../images/about-bg.jpg);
   padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #about-us h2 {
@@ -332,8 +334,19 @@ section {
 
 #about-us h1 {
   margin-bottom: 30px;
-}
 
+}
+/* #abouto-us .container .padding1 {
+
+}
+#about-us .container .row .col-sm-6 div table {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+} */
+
+
+/*  */
 .progress{
   height: 20px;
   background-color: #fff;
@@ -867,6 +880,11 @@ section {
   height: 50px;
   border-radius: 0;
   box-shadow: none;
+}
+/* new contact */
+#contact #contact-us img:not(.images) {
+  margin-top: 1rem;
+  width: 100%;
 }
 
 textarea.form-control {
