@@ -226,3 +226,8 @@
 		float: none;
 	}
 }
+
+/* new */
+@media screen and (max-width: 750px) {
+	
+}
