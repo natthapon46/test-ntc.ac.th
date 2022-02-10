@@ -1050,3 +1050,10 @@ ul.address {
   margin-bottom: 5rem;
 }
 /*Presets*/
+
+/* blog */
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
