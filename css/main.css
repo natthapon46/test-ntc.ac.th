@@ -154,21 +154,21 @@ section {
 /* new */
 #home-slider .carousel-inner #item1 {
   width: 100%;
-  background-image: url(../images/slider/011.jpg);
-  background-position: bottom;
+  background-image: url(../images/slider/111.jpg);
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #home-slider .carousel-inner #item2 {
   width: 100%;
-  background-image: url(../images/slider/02.jpg);
-  background-position: top;
+  background-image: url(../images/slider/002.jpg);
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #home-slider .carousel-inner #item3 {
   width: 100%;
-  background-image: url(../images/slider/03.jpg);
+  background-image: url(../images/slider/003.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
