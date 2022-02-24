@@ -379,6 +379,9 @@ section {
   padding: 15px;
   border-radius: 10px;
 }
+#about-us div div div div table tr td.padding1 {
+  padding: 2rem;
+}
 #about-us div div div div table tr td.padding1 p {
   color: #fff;
 }
