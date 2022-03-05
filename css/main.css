@@ -154,28 +154,28 @@ section {
 /* new */
 #home-slider .carousel-inner #item1 {
   width: 100%;
-  background-image: url(../images/slider/111.jpg);
+  background-image: url(../images/slider/00001.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #home-slider .carousel-inner #item2 {
   width: 100%;
-  background-image: url(../images/slider/002.jpg);
+  background-image: url(../images/slider/0002.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #home-slider .carousel-inner #item3 {
   width: 100%;
-  background-image: url(../images/slider/003.jpg);
-  background-position: center;
+  background-image: url(../images/slider/0003.jpg);
+  background-position: 0 -8rem;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #home-slider .carousel-inner #item4 {
   width: 100%;
-  background-image: url(../images/slider/04.jpg);
+  background-image: url(../images/slider/0004.png);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
